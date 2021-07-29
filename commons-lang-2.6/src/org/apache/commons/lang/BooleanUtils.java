@@ -863,7 +863,7 @@ public class BooleanUtils {
      *     <li>false ^ false = false</li>
      *     <li>true ^ false = true</li>
      * </ul>
-     * <p>其实这样也能进行异或运算的，如：<code>System.out.println(true^true^false^true^false);</code></p>
+     * <p>其实这样也能进行异或运算的，如：<code>System.out.println(true^true^false^true^false);</code>，但注意，这个代码有问题。如System.out.println(true^true^true);的结果与该方法xor(new boolean[]{true,true,true})的结果不一样。</p>
      *
      * @param array boolean数组
      * @return 如果异或成功则返回true，否则返回false
