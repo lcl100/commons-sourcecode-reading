@@ -864,6 +864,10 @@ public class BooleanUtils {
      *     <li>true ^ false = true</li>
      * </ul>
      * <p>其实这样也能进行异或运算的，如：<code>System.out.println(true^true^false^true^false);</code>，但注意，这个代码有问题。如System.out.println(true^true^true);的结果与该方法xor(new boolean[]{true,true,true})的结果不一样。</p>
+     * <p><i>注：经过查找资料，该方法的结果是错误的，请忽略。对于该问题的参考资料请查看
+     * <a href="https://stackoverflow.com/questions/68587686/the-result-of-xortrue-true-true-of-the-booleanutils-class-under-the-commons">
+     *     The result of xor(true, true, true) of the BooleanUtils class under the commons-lang toolkit under Apache is false, why?</a>。除此之外，
+     *     你还可以在最新的<a href="https://github.com/apache/commons-lang/blob/master/src/main/java/org/apache/commons/lang3/BooleanUtils.java">GitHub源码地址</a>看到已经修复了该问题。</i></p>
      *
      * @param array boolean数组
      * @return 如果异或成功则返回true，否则返回false
